@@ -5,6 +5,7 @@ import NoteContext from "../context/notes/NoteContext";
 import NoteItem from "./NoteItem";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import RichTextInput from "./RichTextInput";
 function Notes() {
   const context = useContext(NoteContext);
   let navigate = useNavigate()
@@ -102,11 +103,17 @@ function Notes() {
                   <label htmlFor="description" className="form-label">
                     Description
                   </label>
-                  <input
+                  {/* <input
                     type="text"
                     className="form-control"
                     id="edescription"
                     name="edescription"
+                    value={note.edescription}
+                    onChange={onChange}
+                    minLength={5}
+                    required
+                  /> */}
+                  <RichTextInput
                     value={note.edescription}
                     onChange={onChange}
                     minLength={5}

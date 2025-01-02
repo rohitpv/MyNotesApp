@@ -9,7 +9,7 @@ function NoteItem(props) {
       <div className="card">
         <div className="card-body">
           <h5 className="card-title">{note.title}</h5>
-          <p className="card-text">{note.description.slice(0,35)+"..."}</p>
+          <div dangerouslySetInnerHTML={{ __html: note.description.slice(0, 35) + "..." }} />
           <button
             className="btn btn-primary"
             onClick={() => {
